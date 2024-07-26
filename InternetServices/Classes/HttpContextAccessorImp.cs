@@ -1,6 +1,6 @@
 ﻿using InternetServices.Interfaces;
 
-namespace InternetServices.Models
+namespace InternetServices.Classes
 {
     public class HttpContextAccessorImp : IHttpContextAccessorAble
     {
@@ -10,6 +10,9 @@ namespace InternetServices.Models
             ContextAccessor = contextAccessor;
         }
 
-        
+       /* public void a()
+        {
+            this.ContextAccessor;
+        }*/
     }
 }

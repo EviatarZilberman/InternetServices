@@ -1,6 +1,6 @@
 ﻿using InternetServices.Interfaces;
 
-namespace InternetServices.Models
+namespace InternetServices.Classes
 {
     public class WebHostEnvironmentImp : IWebHostEnvironmentAble
     {

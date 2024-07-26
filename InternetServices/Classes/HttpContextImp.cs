@@ -3,7 +3,7 @@ using InternetServices.Interfaces;
 using Microsoft.AspNetCore.Authentication;
 using System.Security.Claims;
 
-namespace InternetServices.Models
+namespace InternetServices.Classes
 {
     public class HttpContextImp : IHttpContextAble
     {
