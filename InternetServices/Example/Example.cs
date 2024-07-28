@@ -7,5 +7,6 @@
         public static void ccc() { }
         public static void ddd() { }
         public static void eee() { }
+        public static void fff() { }
     }
 }
