@@ -4,5 +4,6 @@
     {
         public static void aaa() { }
         public static void bbb() { }
+        public static void ccc() { }
     }
 }
