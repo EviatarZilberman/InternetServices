@@ -28,7 +28,5 @@
             await this._next(httpContext);
             this._logger?.LogInformation(httpContext.Response.StatusCode.ToString());
         }
-
-        private static void SomeMethod() {  }
     }
 }
