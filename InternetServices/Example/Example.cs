@@ -6,5 +6,6 @@
         public static void bbb() { }
         public static void ccc() { }
         public static void ddd() { }
+        public static void eee() { }
     }
 }
