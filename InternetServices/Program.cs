@@ -1,15 +1,21 @@
+using InternetServices.Identity;
 using InternetServices.Middlwares;
 
 var builder = WebApplication.CreateBuilder(args);
 var app = builder.Build();
 
-app.UseMiddleware<LogMiddleware>("Start Task!");
-app.UseMiddleware<LogMiddleware>("End Task!");
-
-app.Run(async context =>
+builder.Services.AddIdentity<ApplicationUser, IdentityRole>(options =>
 {
-    await context.Response.WriteAsync($"Hello from some function in {DateTime.Now}");
+    options.Password.RequireDigit = true;
+    options.Password.RequiredLength = 8;
+    options.Password.RequireNonAlphanumeric = false;
+    options.Password.RequireUppercase = true;
+    options.Password.RequireLowercase = true;
+    options.User.RequireUniqueEmail = true;
 });
+
+app.UseAuthentication();
+app.UseAuthorization();
 
 app.MapGet("/", () => "Hello World!");
 
