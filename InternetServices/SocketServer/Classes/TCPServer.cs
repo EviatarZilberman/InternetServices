@@ -32,14 +32,18 @@ namespace InternetServices.SocketServer.Classes
             var tcpStream = client.GetStream();
             int readTotal = 0;
 
+            MessagePadder messagePadder = new(this.Configuration);
             while((readTotal = tcpStream.Read(buffer, 0, buffer.Length)) != 0)
             {
-                string incomingMessage = Encoding.UTF8.GetString(buffer, 0, buffer.Length);
+                string incomingMessage = Encoding.UTF8.GetString(buffer, 0, buffer.Length).Trim();
+                string unPaddedIncomingMessage = messagePadder.RemovePadding(incomingMessage);
                 Console.WriteLine(incomingMessage);
 
                 if (!string.IsNullOrEmpty(incomingMessage))
                 {
-                    byte[] response = Encoding.UTF8.GetBytes("SUCCESSFULLY RESPOND!");
+                    string responseMessage = "SUCCESSFULLY RESPOND!".Trim();
+                    string paddedResponseMessage = messagePadder.AddPadding(responseMessage);
+                    byte[] response = Encoding.UTF8.GetBytes(paddedResponseMessage);
                     tcpStream.Write(response, 0, response.Length);
                 }
 
