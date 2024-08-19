@@ -1,5 +1,11 @@
-﻿namespace InternetServices.AppsettingsReader
+﻿using System.Numerics;
+
+namespace InternetServices.AppSettingsReader
 {
+    /// <summary>
+    /// Reads the appsettings.json for specific project that provides the Iconfiguration argument.
+    /// </summary>
+    /// <typeparam name="T"></typeparam>
     public class AppsettingsReader<T>
     {
         private readonly IConfiguration? _Configuration = null;
@@ -14,7 +20,12 @@
             return $"{tag}:{key}";
         }
 
-        public T? GetAppValue<T>(string tag, string key) where T: class
+        public T? GetStructValue<T>(string tag, string key) where T : struct
+        {
+            return this._Configuration?.GetValue<T>(GenerateSetting(tag, key));
+        }
+
+        public T? GetClassValue<T>(string tag, string key) where T: class
         {
             return this._Configuration?.GetValue<T>(GenerateSetting(tag, key));
         }
