@@ -1,0 +1,11 @@
+Other subjects:
+
+using keyword:
+1. Used to call directuve links- shorting the writing when calling a class etc.
+2. Used to use classes that implements the IDisposable interface. That interface is used to close connections to unmanaged resources, like db, files etc.
+When using the 'using' keyword it calls the Dispose() method automatically when in the end of the process.
+When the using is used like this: using () {} the Dispose() method is called in the end of the {}.
+
+virtual keyword:
+Allows to override the base function  or property in a derived class, by using the keyword override in the name of the overriding method.
+
