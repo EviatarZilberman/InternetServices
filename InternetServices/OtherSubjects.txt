@@ -9,3 +9,6 @@ When the using is used like this: using () {} the Dispose() method is called in 
 virtual keyword:
 Allows to override the base function  or property in a derived class, by using the keyword override in the name of the overriding method.
 
+as and is operators:
+is- Used to perform checikng for reference types (i is int).
+as- Used to perform conversion between competible reference types (var a = "aaa" string b = a as string).
