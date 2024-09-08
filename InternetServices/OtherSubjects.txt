@@ -12,3 +12,19 @@ Allows to override the base function  or property in a derived class, by using t
 as and is operators:
 is- Used to perform checikng for reference types (i is int).
 as- Used to perform conversion between competible reference types (var a = "aaa" string b = a as string).
+
+Boxing / Unboxing:
+Mechanisms used to convert between value types and reference types (must be used carefully because it can occur runtime exceptions):
+
+Boxing (stored in the heap):
+int num = 123;           // Value type (int)
+object obj = num;        // Boxing: int is converted to object
+
+Unboxing (stored in the stack):
+object obj = 123;        // Boxing
+int num = (int)obj;      // Unboxing: object is converted back to int
+
+Boxing and unboxing can cause performance overhead because:
+
+Boxing allocates memory on the heap, which is slower compared to the stack.
+Unboxing involves casting and may result in runtime exceptions if not done carefully.
