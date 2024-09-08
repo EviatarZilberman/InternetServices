@@ -28,3 +28,11 @@ Boxing and unboxing can cause performance overhead because:
 
 Boxing allocates memory on the heap, which is slower compared to the stack.
 Unboxing involves casting and may result in runtime exceptions if not done carefully.
+
+Collections:
+1. ArrayList- stores objects as object type. May be slower and less safer.
+2. Hashtable- A collection of key/value pairs, where keys are unique.
+3. Dictionary<TKey, TValue>- A collection of key/value pairs where both the key and value are of specific types.
+4. HashSet<T>- A collection of unique elements.
+5. LinkedList<T>- A doubly linked list for efficient insertion and removal of elements.
+
