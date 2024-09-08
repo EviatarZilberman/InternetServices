@@ -11,7 +11,7 @@ Allows to override the base function  or property in a derived class, by using t
 
 as and is operators:
 is- Used to perform checikng for reference types (i is int).
-as- Used to perform conversion between competible reference types (var a = "aaa" string b = a as string).
+as- Used to perform conversion between competible re-=ference types (var a = "aaa" string b = a as string).
 
 Boxing / Unboxing:
 Mechanisms used to convert between value types and reference types (must be used carefully because it can occur runtime exceptions):
@@ -35,4 +35,17 @@ Collections:
 3. Dictionary<TKey, TValue>- A collection of key/value pairs where both the key and value are of specific types.
 4. HashSet<T>- A collection of unique elements.
 5. LinkedList<T>- A doubly linked list for efficient insertion and removal of elements.
+
+Parameter types:
+1. arguments are passed to methods by default as value. It means that a copy of the variable is passed and the origin variable is unchanged outside the method.
+2. If we want a method to modify the argument outside the method, we can pass the argument with the keyword ref. The passed argument must be initialized before passed to the method.
+3. Methods can return multiple arguments by using the keyword out. The argument must contain some value. The argument doesn't need to be initialized before passed to the method.
+4. in keyword- The parameter can't be changed in the method (readonly).
+5. params keyword- The last argument in the parameter line of a method. Work like an array and let the users send parameters as much as they want (these parameters will be treated as an array):
+public static function(params int[] numbers) => public static function(1,2,3,4,5.....). 
+
+
+
+
+
 
