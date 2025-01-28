@@ -1,17 +1,17 @@
 Other subjects:
 
 using keyword:
-1. Used to call directuve links- shorting the writing when calling a class etc.
+1. Used to call directive links- shorting the writing when calling a class etc.
 2. Used to use classes that implements the IDisposable interface. That interface is used to close connections to unmanaged resources, like db, files etc.
 When using the 'using' keyword it calls the Dispose() method automatically when in the end of the process.
 When the using is used like this: using () {} the Dispose() method is called in the end of the {}.
 
 virtual keyword:
-Allows to override the base function  or property in a derived class, by using the keyword override in the name of the overriding method.
+Allows to override the base function or property in a derived class, by using the keyword override in the name of the overriding method.
 
 as and is operators:
 is- Used to perform checikng for reference types (i is int).
-as- Used to perform conversion between competible re-=ference types (var a = "aaa" string b = a as string).
+as- Used to perform conversion between competible reference types (var a = "aaa" string b = a as string).
 
 Boxing / Unboxing:
 Mechanisms used to convert between value types and reference types (must be used carefully because it can occur runtime exceptions):
@@ -43,6 +43,47 @@ Parameter types:
 4. in keyword- The parameter can't be changed in the method (readonly).
 5. params keyword- The last argument in the parameter line of a method. Work like an array and let the users send parameters as much as they want (these parameters will be treated as an array):
 public static function(params int[] numbers) => public static function(1,2,3,4,5.....). 
+
+Assemblies:
+1. Assembly is an exe or dll file, that created when running the build command.
+2. Assembly contains metadata, compiled code etc that can be used by other applications.
+3. If the user wants to use it globaly, they have to install it in the GAC (Global Assembly Cache).
+
+Delegates and events:
+1. Delegates are pointers to methods (like in C++). The delegate instance contains list of all the methods that are linked to it and invoke them by the order.
+2. Adding or removing methods to delegate instance by using += / -=.
+3. Events use delegates to provide a signal when something happens.
+4. Events are used in publisher-subscriber design pattern.
+5. Events use EventArgs to pass parameters and EventHandler to treat the event.
+
+Facade design patterns:
+1. A DP that suppose to make the client intercts with the system easier by centerize a few subsystems into one class.
+2. To implement the Facade DP, create one class that contains all the subsystems into one process.
+3. Drink beer.
+
+Miminal API:
+1. Used for single purpose API, small endpoints and microservices.
+2. Written:
+var builder = WebApplication.CreateBuilder(args);
+var app = builder.Build();
+
+// A simple GET endpoint
+app.MapGet("/", () => "Hello, World!");
+
+// Endpoint with parameters
+app.MapGet("/hello/{name}", (string name) => $"Hello, {name}");
+
+// Endpoint using dependency injection
+app.MapGet("/time", (ILogger<Program> logger) => {
+    var time = DateTime.UtcNow;
+    logger.LogInformation($"Time requested: {time}");
+    return time;
+});
+
+app.Run();
+
+
+
 
 
 
