@@ -2,12 +2,14 @@ Other subjects:
 
 using keyword:
 1. Used to call directive links- shorting the writing when calling a class etc.
-2. Used to use classes that implements the IDisposable interface. That interface is used to close connections to unmanaged resources, like db, files etc.
-When using the 'using' keyword it calls the Dispose() method automatically when in the end of the process.
-When the using is used like this: using () {} the Dispose() method is called in the end of the {}.
+2. Used to use classes that implements the IDisposable interface. That interface is used
+to close connections to unmanaged resources, like db, files etc. When using the 'using' 
+keyword it calls the Dispose() method automatically in the end of the process. When the
+using is used like this: using () {} the Dispose() method is called in the end of the {}.
 
 virtual keyword:
-Allows to override the base function or property in a derived class, by using the keyword override in the name of the overriding method.
+Allows to override the base function or property in a derived class, by using the
+keyword override in the name of the overriding method.
 
 as and is operators:
 is- Used to perform checikng for reference types (i is int).
@@ -32,7 +34,8 @@ Unboxing involves casting and may result in runtime exceptions if not done caref
 Collections:
 1. ArrayList- stores objects as object type. May be slower and less safer.
 2. Hashtable- A collection of key/value pairs, where keys are unique.
-3. Dictionary<TKey, TValue>- A collection of key/value pairs where both the key and value are of specific types.
+3. Dictionary<TKey, TValue>- A collection of key/value pairs where both the key and
+value are of specific types.
 4. HashSet<T>- A collection of unique elements.
 5. LinkedList<T>- A doubly linked list for efficient insertion and removal of elements.
 
@@ -50,15 +53,18 @@ Assemblies:
 3. If the user wants to use it globaly, they have to install it in the GAC (Global Assembly Cache).
 
 Delegates and events:
-1. Delegates are pointers to methods (like in C++). The delegate instance contains list of all the methods that are linked to it and invoke them by the order.
+1. Delegates are pointers to methods (like in C++). The delegate instance contains
+list of all the methods that are linked to it and invoke them by the order.
 2. Adding or removing methods to delegate instance by using += / -=.
 3. Events use delegates to provide a signal when something happens.
 4. Events are used in publisher-subscriber design pattern.
 5. Events use EventArgs to pass parameters and EventHandler to treat the event.
 
 Facade design patterns:
-1. A DP that suppose to make the client intercts with the system easier by centerize a few subsystems into one class.
-2. To implement the Facade DP, create one class that contains all the subsystems into one process.
+1. A DP that suppose to make the client intercts with the system easier by
+centerize a few subsystems into one class.
+2. To implement the Facade DP, create one class that contains all the subsystems
+into one process.
 3. Drink beer.
 
 Miminal API:
