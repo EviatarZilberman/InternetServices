@@ -83,13 +83,13 @@ namespace InternetServices.Classes
             this.Context?.Session.Remove(key);
         }
 
-        public void AddSessionItem(string key, object value)
+        public void AddRequestItem(string key, object value)
         {
             if (string.IsNullOrEmpty(key)) return;
             this.Context?.Items.Add(key, value);
         }
 
-        public object? GetSessionItem(string key)
+        public object? GetRequestItem(string key)
         {
             if (!string.IsNullOrEmpty(key)) throw new NullReferenceException(ReturnCodes.INVALID_PROVIDED_KEY.ToString());
             object? value = null;
@@ -97,13 +97,13 @@ namespace InternetServices.Classes
             return value;
         }
 
-        public void RemoveSessionItem(string key)
+        public void RemoveRequestItem(string key)
         {
             if (!string.IsNullOrEmpty(key)) throw new NullReferenceException(ReturnCodes.INVALID_PROVIDED_KEY.ToString());
             this.Context?.Items.Remove(key);
         }
 
-        public void ClearSessionItems()
+        public void ClearRequestItems()
         {
             this.Context?.Items.Clear();
         }
